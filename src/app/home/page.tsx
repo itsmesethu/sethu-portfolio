@@ -2,8 +2,6 @@
 import React from 'react';
 import styles from './page.module.scss';
 import { Grid } from '@mui/material';
-import Image from 'next/image';
-import profilePic from "../../../public/assets/profilePic.jpeg";
 import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
 import Skills from '@/components/Skills/Skills';
