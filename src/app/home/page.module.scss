@@ -1,0 +1,212 @@
+$primary: #5f27cd;
+$dark: #1e1e2f;
+$light: #f7f7f7;
+
+@function multiple-box-shadow($n) {
+    $value: "#{random(2000)}px #{random(2000)}px #FFF";
+
+    @for $i from 2 through $n {
+        $value: "#{$value}, #{random(2000)}px #{random(2000)}px #fff";
+    }
+
+    @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(1000);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.homeContainer {
+    font-family: var(--sub-font), sans-serif;
+    color: $dark;
+    background-color: $light;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+
+    .heroContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: #000000;
+        overflow: hidden;
+    }
+
+    .aboutContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: #000000;
+        overflow: hidden;
+    }
+
+    .gap {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .stars {
+        position: fixed;
+        background: transparent;
+        animation: animStar linear infinite;
+
+        &::after {
+            content: " ";
+            position: absolute;
+            left: -2000px;
+            background: transparent;
+        }
+    }
+    .stars2 {
+        position: fixed;
+        background: transparent;
+        animation: animStar2 linear infinite;
+
+        &::after {
+            content: " ";
+            position: absolute;
+            right: 2000px;
+            background: transparent;
+        }
+    }
+
+    .stars, .stars2 {
+        width: 10px;
+        height: 0.5px;
+        box-shadow: $shadows-small;
+        animation-duration: 1s;
+
+        &::after {
+            width: 10px;
+            height: 0.5px;
+            box-shadow: $shadows-small;
+        }
+    }
+
+    @keyframes animStar {
+        from {
+            transform: translateX(0px);
+        }
+
+        to {
+            transform: translateX(2000px);
+        }
+    }
+
+    @keyframes animStar2 {
+        from {
+            transform: translateX(-2000px);
+        }
+
+        to {
+            transform: translateX(0px);
+        }
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content {
+        max-width: 700px;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+
+            span {
+                color: $primary;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .cta {
+        background: $primary;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+
+        &:hover {
+            background: darken($primary, 10%);
+        }
+    }
+
+    .image {
+        margin-top: 2rem;
+
+        img {
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .highlights {
+        margin-top: 5rem;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+
+        h3 {
+            color: $primary;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @media (min-width: 768px) {
+        .intro {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .image {
+            margin-top: 0;
+        }
+
+        .cards {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
