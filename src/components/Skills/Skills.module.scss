@@ -155,10 +155,8 @@
                     z-index: 0;
 
                     background: radial-gradient(circle at center,
-                            var(--moon-clr) 0%,
-                            rgba(0, 240, 255, 0.3) 30%,
-                            rgba(0, 240, 255, 0.15) 60%,
-                            transparent 100%);
+                            var(--moon-clr) 20%,
+                            transparent 40%);
 
                     filter: blur(60px) brightness(1.5);
                     opacity: 0.45;
@@ -166,22 +164,22 @@
                     transition: filter 0.3s ease, opacity 0.3s ease;
                 }
 
-                &:hover {
-                    transform: scale(1.05);
+                // &:hover {
+                //     transform: scale(1.05);
 
-                    &::before {
-                        opacity: 0.6;
-                    }
+                //     &::before {
+                //         opacity: 0.6;
+                //     }
 
-                    &::after {
-                        filter: blur(80px);
-                        opacity: 0.8;
-                    }
+                //     &::after {
+                //         filter: blur(80px);
+                //         opacity: 0.8;
+                //     }
 
-                    .glassReflection {
-                        opacity: 0.5;
-                    }
-                }
+                //     .glassReflection {
+                //         opacity: 0.5;
+                //     }
+                // }
             }
 
             .cardMain:nth-child(1) {
@@ -213,11 +211,11 @@
             }
 
             .cardMain:nth-child(8) {
-                --moon-clr: #287AC0;
+                --moon-clr: #FFD94A;
             }
 
             .cardMain:nth-child(9) {
-                --moon-clr: #FFD94A;
+                --moon-clr: #287AC0;
             }
 
             .cardMain:nth-child(10) {

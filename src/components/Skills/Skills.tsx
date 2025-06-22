@@ -34,12 +34,12 @@ const Skills = () => {
             name: 'NodeJS'
         },
         {
-            logo: '/assets/logos/rest-api.png',
-            name: 'Rest API'
-        },
-        {
             logo: '/assets/logos/python-5.svg',
             name: 'Python'
+        },
+        {
+            logo: '/assets/logos/rest-api.png',
+            name: 'Rest API'
         },
         {
             logo: '/assets/logos/sql-1.svg',
