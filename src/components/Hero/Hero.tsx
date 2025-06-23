@@ -3,6 +3,8 @@ import Image from "next/image";
 import mainPic from "../../../public/assets/sethu-profile.jpg";
 import { Grid, useMediaQuery } from '@mui/material';
 import { AiFillLinkedin, AiFillInstagram, AiFillFilePdf } from "react-icons/ai";
+import { IoMdMail } from "react-icons/io";
+
 import Link from "next/link";
 
 export default function Hero() {
@@ -11,8 +13,8 @@ export default function Hero() {
 
     function downloadResume() {
         const link = document.createElement('a');
-        link.href = '/sethu_resume.pdf'; 
-        link.download = 'Sethu_Resume.pdf'; 
+        link.href = '/sethu_resume.pdf';
+        link.download = 'Sethu_Resume.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -63,16 +65,20 @@ export default function Hero() {
                         <br />Frontend&nbsp;Developer
                     </Grid>
                     <Grid container size={12}>
-                    <Grid size={12} className={styles.buttonMain}>
-                        <button className={styles.cButton} onClick={() => window.location.href = "mailto:sethuraman0709@gmail.com?subject=Let's Connect&body=Hi Sethu,"}>
-                            Connect
-                        </button>
-                    </Grid>
-                    <Grid container size={12} className={styles.socialIcons}>
-                        <Link href="https://www.linkedin.com/in/sethuraman-m" target="_blank"><AiFillLinkedin /></Link>
-                        <Link href="https://www.instagram.com/saturn.79?igsh=dGprM3UzMTdnN2w1" target="_blank"><AiFillInstagram /></Link>
-                        <Link href=""><AiFillFilePdf onClick={() => downloadResume()} /></Link>
-                    </Grid>
+                        <Grid size={12} className={styles.buttonMain}>
+                            <Link href="#contact">
+                                <button className={styles.cButton}>
+                                    Connect
+                                    <div className={styles.glassReflection}></div>
+                                </button>
+                            </Link>
+                        </Grid>
+                        <Grid container size={12} className={styles.socialIcons}>
+                            <Link href="https://www.linkedin.com/in/sethuraman-m" target="_blank"><AiFillLinkedin /></Link>
+                            <Link href="https://www.instagram.com/saturn.79?igsh=dGprM3UzMTdnN2w1" target="_blank"><AiFillInstagram /></Link>
+                            <Link href=""><IoMdMail onClick={() => window.location.href = "mailto:sethuraman0709@gmail.com?subject=Let's Connect&body=Hi Sethu,"} /></Link>
+                            <Link href=""><AiFillFilePdf onClick={() => downloadResume()} /></Link>
+                        </Grid>
                     </Grid>
                 </Grid>
                 <Grid container size={lapView ? 4 : 6} className={styles.imageWrap}>

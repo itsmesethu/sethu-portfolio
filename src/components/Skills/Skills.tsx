@@ -26,6 +26,10 @@ const Skills = () => {
             name: 'HTML'
         },
         {
+            logo: '/assets/logos/css-3.svg',
+            name: 'CSS'
+        },
+        {
             logo: '/assets/logos/sass-1.svg',
             name: 'SASS'
         },
@@ -45,6 +49,22 @@ const Skills = () => {
             logo: '/assets/logos/sql-1.svg',
             name: 'SQL'
         },
+        {
+            logo: '/assets/logos/github.png',
+            name: 'GitHub'
+        },
+        {
+            logo: '/assets/logos/figma-icon.svg',
+            name: 'Figma'
+        },
+        {
+            logo: '/assets/logos/visual-studio-code-1.svg',
+            name: 'VS Code'
+        },
+        {
+            logo: '/assets/logos/postman.svg',
+            name: 'Postman'
+        },
     ]
 
     return (
@@ -57,7 +77,7 @@ const Skills = () => {
                     My journey in tech has helped me explore and master several tools and languages. Below are the core skills that reflect my experience and versatility:
                 </Grid>
                 <Grid container size={12} className={styles.cardsDisplay}>
-                    {SkillsList.map((skill, index) =>
+                    {SkillsList.slice(0,11).map((skill, index) =>
                     (<Grid container className={styles.cardMain} key={index}>
                         <div className={styles.glassReflection}></div>
                         <Grid size={12} className={styles.logo}>
@@ -69,6 +89,22 @@ const Skills = () => {
                     </Grid>
                     ))}
                 </Grid>
+                <Grid size={12} className={styles.content}>
+                    Tools I'm familiar with:
+                </Grid>
+                <Grid container size={12} className={`${styles.cardsDisplay} ${styles.tools}`}>
+                {SkillsList.slice(11,SkillsList.length).map((skill, index) =>
+                (<Grid container className={styles.cardMain} key={index}>
+                    <div className={styles.glassReflection}></div>
+                    <Grid size={12} className={styles.logo}>
+                        <img src={skill.logo} />
+                    </Grid>
+                    <Grid size={12} className={styles.text}>
+                        {skill.name}
+                    </Grid>
+                </Grid>
+                ))}
+            </Grid>
             </Grid>
         </Grid>
     )

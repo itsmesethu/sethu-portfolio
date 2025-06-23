@@ -9,6 +9,7 @@ import UnderDev from '@/components/UnderDev/UnderDev';
 import Projects from '@/components/Projects/Projects';
 import Experience from '@/components/Experience/Experience';
 import { GrProjects } from 'react-icons/gr';
+import ContactForm from '@/components/ContactForm/ContactForm';
 
 const HomePage = () => {
     return (
@@ -31,6 +32,10 @@ const HomePage = () => {
             <Grid container size={12} className={styles.gap}></Grid>
             <Grid container size={12} id="projects" className={styles.divContainer}>
                 <Projects />
+            </Grid>
+            <Grid container size={12} className={styles.gap}></Grid>
+            <Grid container size={12} id="contact" className={styles.divContainer}>
+                <ContactForm />
             </Grid>
             <Grid container size={12} className={styles.gap}></Grid>
             <UnderDev />
