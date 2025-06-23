@@ -5,7 +5,7 @@ import styles from './ContactForm.module.scss';
 
 const ContactForm = () => {
     const [state, handleSubmit] = useForm("myzjnjog");
-    const formRef = useRef(null);
+    const formRef = useRef<HTMLFormElement>(null);
 
     useEffect(() => {
         if (state.succeeded && formRef.current) {
