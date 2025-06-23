@@ -6,6 +6,9 @@ import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
 import Skills from '@/components/Skills/Skills';
 import UnderDev from '@/components/UnderDev/UnderDev';
+import Projects from '@/components/Projects/Projects';
+import Experience from '@/components/Experience/Experience';
+import { GrProjects } from 'react-icons/gr';
 
 const HomePage = () => {
     return (
@@ -14,12 +17,20 @@ const HomePage = () => {
                 <Hero />
             </Grid>
             <Grid container size={12} className={styles.gap}></Grid>
-            <Grid container size={12} id="about" className={styles.aboutContainer}>
+            <Grid container size={12} id="about" className={styles.divContainer}>
                 <About />
             </Grid>
             <Grid container size={12} className={styles.gap}></Grid>
-            <Grid container size={12} id="skills" className={styles.aboutContainer}>
+            <Grid container size={12} id="experience" className={styles.divContainer}>
+                <Experience />
+            </Grid>
+            <Grid container size={12} className={styles.gap}></Grid>
+            <Grid container size={12} id="skills" className={styles.divContainer}>
                 <Skills />
+            </Grid>
+            <Grid container size={12} className={styles.gap}></Grid>
+            <Grid container size={12} id="projects" className={styles.divContainer}>
+                <Projects />
             </Grid>
             <Grid container size={12} className={styles.gap}></Grid>
             <UnderDev />

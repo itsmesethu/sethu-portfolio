@@ -71,7 +71,7 @@
                 --moon-clr: #00f0ff;
 
                 position: relative;
-                width: 120px;
+                width: 110px;
                 aspect-ratio: 5 / 6;
                 padding: 1rem;
                 border-radius: 1rem;
@@ -104,6 +104,7 @@
                     justify-content: center;
                     color: #eaeaea;
                     font-family: var(--menu-font);
+                    font-size: 1rem;
                 }
 
                 .glassReflection {

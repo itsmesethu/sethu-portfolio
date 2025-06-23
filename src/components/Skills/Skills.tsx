@@ -51,7 +51,7 @@ const Skills = () => {
         <Grid container size={12} className={styles.contentMain}>
             <Grid container size={12} className={styles.mainWrap}>
                 <Grid size={12} className={styles.titleMain}>
-                    Skills
+                    My Skills
                 </Grid>
                 <Grid size={12} className={styles.content}>
                     My journey in tech has helped me explore and master several tools and languages. Below are the core skills that reflect my experience and versatility:
