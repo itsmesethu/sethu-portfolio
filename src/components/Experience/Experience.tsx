@@ -23,7 +23,7 @@ const Experience = () => {
                                     Hyderabad {deskView? ',':''}
                                 </Grid>
                                 <Grid className={styles.timeline}>
-                                    Nov 2023 - Current
+                                    Nov 2023 - Present
                                 </Grid>
                             </Grid>
                         </Grid>
