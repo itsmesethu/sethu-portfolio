@@ -38,8 +38,8 @@ const HomePage = () => {
                 <ContactForm />
             </Grid>
             <Grid container size={12} className={styles.gap}></Grid>
-            <UnderDev />
-            <Grid container size={12} className={styles.gap}></Grid>
+            {/* <UnderDev />
+            <Grid container size={12} className={styles.gap}></Grid> */}
             {/* <div className={styles.stars}></div>
             <div className={styles.stars}></div> */}
             {/* <div className={styles.stars2}></div>
