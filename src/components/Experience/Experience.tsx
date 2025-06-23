@@ -28,7 +28,7 @@ const Experience = () => {
                             </Grid>
                         </Grid>
                         <Grid size={12} className={styles.role}>
-                            IT Analyst (Frontend Dev)
+                            Software Engineer
                         </Grid>
                         <Grid size={12} className={styles.desc}>
                             <ul>
