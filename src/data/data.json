@@ -1,0 +1,154 @@
+{
+  "hero": {
+    "name": "Sethu",
+    "title": "Frontend Developer",
+    "greeting": "Hey,",
+    "resumePath": "/sethu_resume.pdf",
+    "resumeDownloadName": "Sethu_Resume.pdf",
+    "email": "sethuraman0709@gmail.com",
+    "emailSubject": "Let's Connect",
+    "emailBody": "Hi Sethu,",
+    "socialLinks": {
+      "linkedin": "https://www.linkedin.com/in/sethuraman-m",
+      "instagram": "https://www.instagram.com/saturn.79?igsh=dGprM3UzMTdnN2w1"
+    },
+    "navigation": [
+      { "label": "SR", "href": "", "isTop": true },
+      { "label": "About", "href": "#about", "isTop": false },
+      { "label": "Projects", "href": "#projects", "isTop": false },
+      { "label": "Skills", "href": "#skills", "isTop": false },
+      { "label": "Contact", "href": "#contact", "isTop": false },
+      { "label": "More", "href": "#more", "isTop": false }
+    ]
+  },
+  "about": {
+    "title": "About me",
+    "description": "I'm a passionate Frontend Developer with a strong eye for design and detail, committed to building fast, accessible, and responsive user interfaces. With experience in React, Next.js, and modern CSS frameworks, I bridge the gap between design and development to deliver smooth, intuitive web experiences. Whether it's crafting clean code or collaborating with teams to solve real-world problems, I focus on creating products that are not only functional but also visually compelling. Every line of code I write is driven by a desire to turn ideas into impact."
+  },
+  "experience": {
+    "title": "My Experience",
+    "jobs": [
+      {
+        "company": "Innowinds Inc.",
+        "location": "Hyderabad",
+        "timeline": "Oct 2023 - Present",
+        "role": "Software Engineer",
+        "responsibilities": [
+          "Designed and developed responsive interfaces using Next JS, React.js and SCSS.",
+          "Integrated Google Maps and Stripe payment gateway into the main e-commerce app.",
+          "Built a partner app with real-time previews and onboarding for storefronts.",
+          "Contributing to the enterprise-level applications.",
+          "Building scalable web applications in an agile environment using Azure DevOps and CI/CD best practices."
+        ]
+      },
+      {
+        "company": "Toast, Inc.",
+        "location": "Chennai",
+        "timeline": "Aug 2022 - Jun 2023",
+        "role": "Software Engineer Intern",
+        "responsibilities": [
+          "Worked with C#, .NET, and MVC to develop internal enterprise tools.",
+          "Built an Employee Management System with role-based access and full CRUD features.",
+          "Contributed to the Red Flag Team, identifying and fixing bugs in legacy code.",
+          "Worked with RESTful services and database integration, strengthening backend and web fundamentals."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "list": [
+      {
+        "name": "Custom - Ecommerce",
+        "company": "@ Innowinds Inc.",
+        "description": "A modern e-commerce platform designed to help small businesses easily create and manage their online stores with instant deployment, fast payments, and seamless shipping integration. Includes a dedicated partner app for simplified product, order, and storefront management.\nBuilt with a responsive, mobile-first UI using React.js, Next.js and SCSS, ensuring performance and accessibility across devices. Integrated Stripe for secure transactions and Google Maps for accurate address handling. The platform offers real-time storefront previews, dynamic onboarding flows, and user-friendly dashboards—streamlining the entire setup process from product listing to order fulfillment.\nAlso developed a React Native mobile app for store owners, enabling easy management of orders, inventory, and notifications on the go, ensuring seamless store operations from any device."
+      },
+      {
+        "name": "XtraChef - Red Flags",
+        "company": "@ Toast, Inc.",
+        "description": "Contributed to the stability and quality of a large-scale enterprise web application by identifying, analyzing, and resolving critical bugs in the development codebase. Utilized C#, .NET, and MVC architecture to debug issues, refactor inefficient logic, and implement scalable, maintainable fixes aligned with coding standards. Worked closely with QA and senior developers to triage issues, reproduce edge cases, and deliver solutions that improved performance, reduced defect recurrence, and supported smooth release cycles. Also participated in reviewing legacy code and documenting resolved issues to support ongoing maintenance."
+      },
+      {
+        "name": "Employee Payroll Management",
+        "company": "@ Toast, Inc.",
+        "description": "A full-stack web application developed during my internship at Toast Inc. to manage employee records, roles, payroll, and access levels. Built with C#, ASP.NET MVC, SQL, and REST APIs for backend services, and used React.js and CSS for building a responsive, user-friendly frontend interface.\nKey features included employee onboarding, role-based authentication, payroll management, attendance tracking, and full CRUD operations. Emphasized clean architecture, secure data handling, and seamless API integration between the backend and frontend layers for efficient and scalable performance."
+      },
+      {
+        "name": "Virtual Game Controller - PC",
+        "company": "with head pose estimation",
+        "description": "An interactive project that uses machine learning and facial point detection to build a hands-free virtual game controller. Leveraged head pose estimation techniques using ML libraries to track real-time head movements and map them to directional controls. Integrated the input system with a simple kart racing game developed in Unity, enabling players to steer and control the game using only head gestures. Focused on enhancing accessibility in gaming through computer vision, real-time input mapping, and Unity game integration."
+      }
+    ]
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "My journey in tech has helped me explore and master several tools and languages. Below are the core skills that reflect my experience and versatility:",
+    "toolsDescription": "Tools I'm familiar with:",
+    "list": [
+      {
+        "logo": "/assets/logos/react-2.svg",
+        "name": "React JS"
+      },
+      {
+        "logo": "/assets/logos/next-js.svg",
+        "name": "Next JS"
+      },
+      {
+        "logo": "/assets/logos/javascript-1.svg",
+        "name": "Javascript"
+      },
+      {
+        "logo": "/assets/logos/typescript.svg",
+        "name": "Typescript"
+      },
+      {
+        "logo": "/assets/logos/html-1.svg",
+        "name": "HTML"
+      },
+      {
+        "logo": "/assets/logos/css-3.svg",
+        "name": "CSS"
+      },
+      {
+        "logo": "/assets/logos/sass-1.svg",
+        "name": "SASS"
+      },
+      {
+        "logo": "/assets/logos/node-js.png",
+        "name": "NodeJS"
+      },
+      {
+        "logo": "/assets/logos/python-5.svg",
+        "name": "Python"
+      },
+      {
+        "logo": "/assets/logos/rest-api.png",
+        "name": "Rest API"
+      },
+      {
+        "logo": "/assets/logos/sql-1.svg",
+        "name": "SQL"
+      },
+      {
+        "logo": "/assets/logos/github.png",
+        "name": "GitHub"
+      },
+      {
+        "logo": "/assets/logos/figma-icon.svg",
+        "name": "Figma"
+      },
+      {
+        "logo": "/assets/logos/visual-studio-code-1.svg",
+        "name": "VS Code"
+      },
+      {
+        "logo": "/assets/logos/postman.svg",
+        "name": "Postman"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact me",
+    "formspreeId": "myzjnjog"
+  }
+}

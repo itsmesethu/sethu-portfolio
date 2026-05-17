@@ -4,17 +4,18 @@ import mainPic from "../../../public/assets/sethu-profile.jpg";
 import { Grid, useMediaQuery } from '@mui/material';
 import { AiFillLinkedin, AiFillInstagram, AiFillFilePdf } from "react-icons/ai";
 import { IoMdMail } from "react-icons/io";
-
 import Link from "next/link";
+import data from "@/data/data.json";
 
 export default function Hero() {
 
     const lapView = useMediaQuery('(min-width:1024px)');
+    const { hero } = data;
 
     function downloadResume() {
         const link = document.createElement('a');
-        link.href = '/sethu_resume.pdf';
-        link.download = 'Sethu_Resume.pdf';
+        link.href = hero.resumePath;
+        link.download = hero.resumeDownloadName;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -26,43 +27,24 @@ export default function Hero() {
                 {lapView && (
                     <Grid container size={2} className={styles.navWrap}>
                         <Grid container size={12} className={styles.navContainer}>
-                            <Link href="" className={`${styles.navItem} ${styles.top}`}>
-                                <button>
-                                    SR
-                                </button>
-                            </Link>
-                            <Link href="#about" className={styles.navItem}>
-                                <button>
-                                    About
-                                </button>
-                            </Link>
-                            <Link href="#projects" className={styles.navItem}>
-                                <button>
-                                    Projects
-                                </button>
-                            </Link>
-                            <Link href="#skills" className={styles.navItem}>
-                                <button>
-                                    Skills
-                                </button>
-                            </Link>
-                            <Link href="#contact" className={styles.navItem}>
-                                <button>
-                                    Contact
-                                </button>
-                            </Link>
-                            <Link href="#more" className={styles.navItem}>
-                                <button>
-                                    More
-                                </button>
-                            </Link>
+                            {hero.navigation.map((nav, index) => (
+                                <Link 
+                                    key={index}
+                                    href={nav.href} 
+                                    className={nav.isTop ? `${styles.navItem} ${styles.top}` : styles.navItem}
+                                >
+                                    <button>
+                                        {nav.label}
+                                    </button>
+                                </Link>
+                            ))}
                         </Grid>
                     </Grid>
                 )}
                 <Grid container size={6} className={styles.heroContent}>
                     <Grid size={12} className={styles.textMain}>
-                        Hey, <br /> I'm Sethu
-                        <br />Frontend&nbsp;Developer
+                        {hero.greeting} <br /> I'm {hero.name}
+                        <br />{hero.title}
                     </Grid>
                     <Grid container size={12}>
                         <Grid size={12} className={styles.buttonMain}>
@@ -74,9 +56,9 @@ export default function Hero() {
                             </Link>
                         </Grid>
                         <Grid container size={12} className={styles.socialIcons}>
-                            <Link href="https://www.linkedin.com/in/sethuraman-m" target="_blank"><AiFillLinkedin /></Link>
-                            <Link href="https://www.instagram.com/saturn.79?igsh=dGprM3UzMTdnN2w1" target="_blank"><AiFillInstagram /></Link>
-                            <Link href=""><IoMdMail onClick={() => window.location.href = "mailto:sethuraman0709@gmail.com?subject=Let's Connect&body=Hi Sethu,"} /></Link>
+                            <Link href={hero.socialLinks.linkedin} target="_blank"><AiFillLinkedin /></Link>
+                            <Link href={hero.socialLinks.instagram} target="_blank"><AiFillInstagram /></Link>
+                            <Link href=""><IoMdMail onClick={() => window.location.href = `mailto:${hero.email}?subject=${hero.emailSubject}&body=${hero.emailBody}`} /></Link>
                             <Link href=""><AiFillFilePdf onClick={() => downloadResume()} /></Link>
                         </Grid>
                     </Grid>

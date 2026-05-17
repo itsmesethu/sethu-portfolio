@@ -2,9 +2,11 @@ import React, { useRef, useEffect } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 import { Grid } from '@mui/material';
 import styles from './ContactForm.module.scss';
+import data from '@/data/data.json';
 
 const ContactForm = () => {
-    const [state, handleSubmit] = useForm("myzjnjog");
+    const { contact } = data;
+    const [state, handleSubmit] = useForm(contact.formspreeId);
     const formRef = useRef<HTMLFormElement>(null);
 
     useEffect(() => {
@@ -17,7 +19,7 @@ const ContactForm = () => {
         <Grid container size={12} className={styles.contentMain}>
             <Grid container size={12} className={styles.mainWrap}>
                 <Grid size={12} className={styles.titleMain}>
-                    Contact me
+                    {contact.title}
                 </Grid>
                 <Grid size={12} className={styles.content}>
                     <form onSubmit={handleSubmit} className={styles.form} ref={formRef}>
