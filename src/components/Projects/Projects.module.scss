@@ -1,183 +1,169 @@
-.contentMain {
+.track {
+    position: relative;
     width: 100%;
-    height: max-content;
-    padding: 1rem;
+    z-index: 5;
+    padding: 0 1.5rem 10vh;
     display: flex;
-    justify-content: center;
-    background: #000000;
-    z-index: 9;
+    flex-direction: column;
+    align-items: center;
 
-    .mainWrap {
-        width: 100%;
-        max-width: 1200px;
-        background: #000000;
-        padding: 0rem 1rem;
-        display: grid;
-        align-content: baseline;
+    @media screen and (min-width: 768px) {
+        padding: 0 4rem 10vh;
+    }
 
-        .titleMain {
-            margin-top: 2rem;
-            padding: 1rem;
-            color: #ffffff;
-            font-family: var(--main-font);
-            font-size: 1.5rem;
-            text-align: center;
-            font-weight: 600;
+    .intro {
+        position: sticky;
+        top: 0;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        z-index: 0;
 
-            @media screen and (min-width: 768px) {
-                font-size: 1.7rem;
+        .sectionLabel {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .num {
+                font-family: var(--menu-font);
+                color: var(--accent-primary);
+                font-size: 1rem;
+                font-weight: 700;
             }
 
-            @media screen and (min-width: 1024px) {
-                font-size: 1.9rem;
+            .line {
+                width: 60px;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+            }
+
+            .labelText {
+                font-family: var(--menu-font);
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                color: var(--text-secondary);
+                font-size: 0.85rem;
             }
         }
 
-        .content {
-            color: #989898;
-            padding: 1rem;
-            font-family: var(--sub-font);
-            margin-bottom: 2rem;
-            gap: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .title {
+            font-family: var(--main-font);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
 
-            @media screen and (min-width: 1200px) {
-                gap: 2rem;
+            @media screen and (min-width: 768px) {
+                font-size: 5rem;
             }
+        }
+    }
 
-            .expWrap {
-                width: 100%;
-                border: 1px solid #eaeaea;
-                border-radius: 10px 10px 0px 0px;
-                border-bottom: none;
-                display: flex;
-                padding: 1rem;
-                border-radius: 1rem;
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                backdrop-filter: blur(14px);
-                -webkit-backdrop-filter: blur(14px);
-                overflow: visible;
-                box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
-                z-index: 1;
-                transition: transform 0.3s ease;
+    .cards {
+        width: 100%;
+        max-width: 850px;
+        display: flex;
+        flex-direction: column;
+
+        .cardSticky {
+            position: sticky;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4vh;
+
+            .card {
                 position: relative;
+                width: 100%;
+                padding: 2.5rem;
+                border-radius: 26px;
+                background: rgba(15, 12, 28, 0.85);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+                overflow: hidden;
+                transform-origin: top center;
+                min-height: 340px;
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
 
-                @media screen and (min-width: 1024px) {
-                    max-width: 450px;
+                @media screen and (min-width: 768px) {
+                    padding: 3rem;
                 }
 
-                @media screen and (min-width: 1200px) {
-                    max-width: 550px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 1px;
+                    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.6), rgba(0, 240, 255, 0.3), transparent);
                 }
 
-                .top {
-                    padding: 1rem;
-                    gap: 10px;
+                .cardNumber {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 2.5rem;
+                    font-family: var(--main-font);
+                    font-size: 5rem;
+                    font-weight: 700;
+                    color: rgba(124, 58, 237, 0.12);
+                    line-height: 1;
+                }
 
-                    @media screen and (min-width: 1024px) {
-                        gap: 10px;
-                    }
+                .cardHeader {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    z-index: 1;
 
                     .name {
-                        display: flex;
-                        justify-content: center;
-                        color: #f9f9f9;
-                        font-weight: 500;
-                        display: flex;
-                        align-items: center;
-                        font-size: 1.1rem;
-                        text-align: center;
+                        font-family: var(--sub-font);
+                        font-size: 1.7rem;
+                        font-weight: 600;
+                        color: #ffffff;
 
                         @media screen and (min-width: 768px) {
-                            font-size: 1.2rem;
-                        }
-
-                        @media screen and (min-width: 1024px) {
-                            font-size: 1.3rem;
+                            font-size: 2.2rem;
                         }
                     }
 
-                    .info2 {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        font-size: 0.9rem;
-                        color: #717171;
-                        text-align: center;
-
-                        @media screen and (min-width: 768px) {
-                            font-size: 1rem;
-                        }
-
-                        @media screen and (min-width: 1024px) {
-                            font-size: 1.1rem;
-                        }
+                    .company {
+                        font-family: var(--menu-font);
+                        font-size: 0.95rem;
+                        color: var(--accent-secondary);
+                        letter-spacing: 1px;
                     }
                 }
 
                 .desc {
-                    padding: 0rem 1rem;
-                    font-weight: 300;
+                    font-family: var(--sub-font);
                     font-size: 1rem;
-                    color: #989898;
-                    text-align: center;
-                    z-index: 10;
-                    height: 300px;
-                    overflow: scroll;
-                    overflow-x: hidden;
-                    margin-bottom: 1rem;
+                    line-height: 1.7;
+                    color: var(--text-secondary);
+                    font-weight: 300;
+                    z-index: 1;
+                    white-space: pre-line;
 
                     @media screen and (min-width: 768px) {
                         font-size: 1.1rem;
                     }
-
-                    @media screen and (min-width: 1024px) {
-                        font-size: 1.2rem;
-                    }
-
-                    scrollbar-width:thin;
-                    scrollbar-color: #666666 transparent;
-
-                    &::-webkit-scrollbar {
-                        width: 8px;
-                    }
-
-                    &::-webkit-scrollbar-track {
-                        background: transparent;
-                    }
-
-                    &::-webkit-scrollbar-thumb {
-                        background-color: transparent;
-                        border-radius: 10px;
-                    }
                 }
 
-                &::after {
-                    content: "";
+                .borderGlow {
                     position: absolute;
-                    top: -50px;
-                    left: -50px;
-                    right: -50px;
-                    bottom: -50px;
+                    bottom: -40%;
+                    right: -10%;
+                    width: 400px;
+                    height: 400px;
                     border-radius: 50%;
-                    z-index: 0;
-
-                    background: radial-gradient(circle at center,
-                            #303030 20%,
-                            transparent 40%); 
-
-                    filter: blur(90px) brightness(1.5);
-                    opacity: 0.45;
-                    // animation: neonrotate var(--animation-duration) linear infinite;
-                    transition: filter 0.3s ease, opacity 0.3s ease;
-
-                    @media screen and (min-width: 1024px) {
-                        background: linear-gradient(to right, #303030, transparent);
-                    }
+                    background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+                    pointer-events: none;
                 }
             }
         }

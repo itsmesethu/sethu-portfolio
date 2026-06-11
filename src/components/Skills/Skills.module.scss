@@ -1,99 +1,150 @@
-@property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
 .contentMain {
     width: 100%;
-    height: max-content;
-    padding: 1rem;
     display: flex;
     justify-content: center;
-    background: #000000;
-    z-index: 9;
+    position: relative;
+    z-index: 5;
 
     .mainWrap {
         width: 100%;
         max-width: 1200px;
-        background: #000000;
-        padding: 0rem 1rem;
-        display: grid;
-        align-content: baseline;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
 
-        .titleMain {
-            margin-top: 2rem;
-            padding: 1rem;
-            color: #ffffff;
-            font-family: var(--main-font);
-            font-size: 1.5rem;
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
             text-align: center;
-            font-weight: 600;
 
-            @media screen and (min-width: 768px) {
-                font-size: 1.7rem;
+            .sectionLabel {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .num {
+                    font-family: var(--menu-font);
+                    color: var(--accent-primary);
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+
+                .line {
+                    width: 60px;
+                    height: 1px;
+                    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+                }
+
+                .labelText {
+                    font-family: var(--menu-font);
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                    color: var(--text-secondary);
+                    font-size: 0.85rem;
+                }
             }
 
-            @media screen and (min-width: 1024px) {
-                font-size: 1.9rem;
+            .title {
+                font-family: var(--main-font);
+                font-size: 2.8rem;
+                font-weight: 700;
+                color: #ffffff;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 4.5rem;
+                }
+            }
+
+            .subtitle {
+                font-family: var(--sub-font);
+                font-size: 1.1rem;
+                color: var(--text-secondary);
+                font-weight: 300;
+                max-width: 700px;
+                line-height: 1.7;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 1.3rem;
+                }
             }
         }
 
-        .content {
-            color: #989898;
-            padding: 1rem 2rem;
+        .toolsLabel {
             font-family: var(--sub-font);
-            font-size: 1.2rem;
-            text-align: center;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
             font-weight: 300;
+            text-align: center;
+            margin-top: 1rem;
 
             @media screen and (min-width: 768px) {
-                font-size: 1.4rem;
-            }
-
-            @media screen and (min-width: 1024px) {
-                font-size: 1.6rem;
+                font-size: 1.3rem;
             }
         }
 
         .cardsDisplay {
             width: 100%;
-            height: max-content;
-            padding: 0rem 2rem 3rem 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+
+            @media screen and (min-width: 768px) {
+                gap: 2rem;
+            }
+
+            .cardWrap {
+                perspective: 800px;
+            }
 
             .cardMain {
-                --animation-duration: 8s;
                 --moon-clr: #00f0ff;
-
                 position: relative;
-                width: 110px;
+                width: 120px;
                 aspect-ratio: 5 / 6;
                 padding: 1rem;
-                border-radius: 1rem;
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 18px;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
                 backdrop-filter: blur(14px);
                 -webkit-backdrop-filter: blur(14px);
-                overflow: visible;
+                overflow: hidden;
                 color: #f5f5f5;
-                box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
-                z-index: 1;
-                transition: transform 0.3s ease;
+                transition: transform 0.2s ease-out, border-color 0.4s ease, box-shadow 0.4s ease;
+                transform-style: preserve-3d;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 1px;
+                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+                }
+
+                &:hover {
+                    border-color: rgba(124, 58, 237, 0.4);
+                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(124, 58, 237, 0.12);
+                }
 
                 .logo {
                     height: 70%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    transform: translateZ(30px);
 
                     img {
                         height: 100%;
+                        max-height: 56px;
                         aspect-ratio: 1;
+                        object-fit: contain;
                     }
                 }
 
@@ -104,7 +155,10 @@
                     justify-content: center;
                     color: #eaeaea;
                     font-family: var(--menu-font);
-                    font-size: 1rem;
+                    font-size: 0.85rem;
+                    letter-spacing: 0.5px;
+                    transform: translateZ(20px);
+                    text-align: center;
                 }
 
                 .glassReflection {
@@ -116,144 +170,53 @@
                     border-radius: inherit;
                     pointer-events: none;
                     z-index: 2;
-
                     background: linear-gradient(135deg,
-                            rgba(255, 255, 255, 0.25) 0%,
-                            rgba(255, 255, 255, 0.05) 40%,
+                            rgba(255, 255, 255, 0.1) 0%,
+                            rgba(255, 255, 255, 0.02) 40%,
                             transparent 100%);
                     mix-blend-mode: screen;
-                    opacity: 0.3;
-                    transform: skewY(-5deg) translateY(-10px);
+                    opacity: 0.6;
                 }
 
-                // &::before {
-                //     content: "";
-                //     position: absolute;
-                //     inset: 0;
-                //     background: conic-gradient(from var(--angle),
-                //             transparent,
-                //             var(--moon-clr),
-                //             transparent,
-                //             var(--moon-clr),
-                //             transparent);
-                //     border-radius: inherit;
-                //     z-index: 1;
-                //     animation: neonrotate var(--animation-duration) linear infinite;
-                //     opacity: 0.25;
-                //     filter: blur(25px);
-                //     mix-blend-mode: screen;
-                //     pointer-events: none;
-                // }
-
-                &::after {
-                    content: "";
+                .hoverGlow {
                     position: absolute;
-                    top: -50px;
-                    left: -50px;
-                    right: -50px;
-                    bottom: -50px;
+                    top: 50%;
+                    left: 50%;
+                    width: 160%;
+                    height: 160%;
+                    transform: translate(-50%, -50%);
                     border-radius: 50%;
+                    background: radial-gradient(circle, var(--moon-clr) 0%, transparent 60%);
+                    filter: blur(40px);
+                    opacity: 0;
+                    transition: opacity 0.4s ease;
+                    pointer-events: none;
                     z-index: 0;
-
-                    background: radial-gradient(circle at center,
-                            var(--moon-clr) 20%,
-                            transparent 40%);
-
-                    filter: blur(60px) brightness(1.5);
-                    opacity: 0.45;
-                    // animation: neonrotate var(--animation-duration) linear infinite;
-                    transition: filter 0.3s ease, opacity 0.3s ease;
                 }
 
-                // &:hover {
-                //     transform: scale(1.05);
-
-                //     &::before {
-                //         opacity: 0.6;
-                //     }
-
-                //     &::after {
-                //         filter: blur(80px);
-                //         opacity: 0.8;
-                //     }
-
-                //     .glassReflection {
-                //         opacity: 0.5;
-                //     }
-                // }
+                &:hover .hoverGlow {
+                    opacity: 0.1;
+                }
             }
 
-            .cardMain:nth-child(1) {
-                --moon-clr: #61DAFB;
-            }
-
-            .cardMain:nth-child(2) {
-                --moon-clr: #ffffff;
-            }
-
-            .cardMain:nth-child(3) {
-                --moon-clr: #F7DF1E;
-            }
-
-            .cardMain:nth-child(4) {
-                --moon-clr: #007ACC;
-            }
-
-            .cardMain:nth-child(5) {
-                --moon-clr: #E34F26;
-            }
-
-            .cardMain:nth-child(6) {
-                --moon-clr: #1B73BA;
-            }
-
-            .cardMain:nth-child(7) {
-                --moon-clr: #CF649A;
-            }
-
-            .cardMain:nth-child(8) {
-                --moon-clr: #58A846;
-            }
-
-            .cardMain:nth-child(9) {
-                --moon-clr: #FFD94A;
-            }
-
-            .cardMain:nth-child(10) {
-                --moon-clr: #287AC0;
-            }
-
-            .cardMain:nth-child(11) {
-                --moon-clr: #FFDA44;
-            }
+            .cardWrap:nth-child(1) .cardMain { --moon-clr: #61DAFB; }
+            .cardWrap:nth-child(2) .cardMain { --moon-clr: #ffffff; }
+            .cardWrap:nth-child(3) .cardMain { --moon-clr: #F7DF1E; }
+            .cardWrap:nth-child(4) .cardMain { --moon-clr: #007ACC; }
+            .cardWrap:nth-child(5) .cardMain { --moon-clr: #E34F26; }
+            .cardWrap:nth-child(6) .cardMain { --moon-clr: #1B73BA; }
+            .cardWrap:nth-child(7) .cardMain { --moon-clr: #CF649A; }
+            .cardWrap:nth-child(8) .cardMain { --moon-clr: #58A846; }
+            .cardWrap:nth-child(9) .cardMain { --moon-clr: #FFD94A; }
+            .cardWrap:nth-child(10) .cardMain { --moon-clr: #287AC0; }
+            .cardWrap:nth-child(11) .cardMain { --moon-clr: #FFDA44; }
 
             &.tools {
-                .cardMain:nth-child(1) {
-                    --moon-clr: #dddddd;
-                }
-
-                .cardMain:nth-child(2) {
-                    --moon-clr: #A259FF;
-                }
-
-                .cardMain:nth-child(3) {
-                    --moon-clr: #2489CA;
-                }
-
-                .cardMain:nth-child(4) {
-                    --moon-clr: #FF6C37;
-                }
+                .cardWrap:nth-child(1) .cardMain { --moon-clr: #dddddd; }
+                .cardWrap:nth-child(2) .cardMain { --moon-clr: #A259FF; }
+                .cardWrap:nth-child(3) .cardMain { --moon-clr: #2489CA; }
+                .cardWrap:nth-child(4) .cardMain { --moon-clr: #FF6C37; }
             }
         }
-    }
-}
-
-@keyframes neonrotate {
-    from {
-        --angle: 0deg;
-    }
-
-    to {
-        --angle: 360deg;
     }
 }
