@@ -1,44 +1,62 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ededed;
   --main-font: "Megrim";
   --sub-font: "Tomorrow";
-  --menu-font: "Quantico"
+  --menu-font: "Quantico";
+  --turret-font: "Turret Road";
+  --accent-primary: #7c3aed;
+  --accent-secondary: #00f0ff;
+  --accent-glow: rgba(124, 58, 237, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-hover: rgba(255, 255, 255, 0.06);
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+  --text-muted: #6b6b80;
+  --section-gap: 6rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
 }
 
+/* App-like: smooth scroll handled by Lenis; hide native scrollbars */
 html,
 body {
   overflow-x: hidden;
-  /* scrollbar-width: thin; */
-  scrollbar-color: #666666 #000000;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
 
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
+/* Lenis smooth scroll setup */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
 
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-radius: 10px;
-  }
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
   color: var(--foreground);
-  background-image: url('../../public/assets/memphis-mini-dark.webp');
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: top left;
+  background: #000000;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -55,8 +73,7 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: #ffffff;
 }
