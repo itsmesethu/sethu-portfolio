@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3738118446764923"
-          crossorigin="anonymous"></script>
+          crossOrigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fleur+De+Leah&family=Limelight&family=Londrina+Outline&family=Major+Mono+Display&family=Megrim&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Tektur:wght@400..900&family=Tilt+Warp:XROT,YROT@-45,-7&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap" rel="stylesheet" />
