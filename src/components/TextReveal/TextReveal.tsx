@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, easeInOut } from 'framer-motion';
 
 interface TextRevealProps {
     text: string;
@@ -42,7 +42,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
             filter: 'blur(0px)',
             transition: {
                 duration: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: easeInOut,
             },
         },
     };
