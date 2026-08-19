@@ -29,7 +29,7 @@
     "title": "My Experience",
     "jobs": [
       {
-        "company": "Innowinds Inc.",
+        "company": "Nova Prime Solutions",
         "location": "Hyderabad",
         "timeline": "Oct 2023 - Present",
         "role": "Software Engineer",
@@ -60,7 +60,7 @@
     "list": [
       {
         "name": "Custom - Ecommerce",
-        "company": "@ Innowinds Inc.",
+        "company": "@ Nova Prime Solutions",
         "description": "A modern e-commerce platform designed to help small businesses easily create and manage their online stores with instant deployment, fast payments, and seamless shipping integration. Includes a dedicated partner app for simplified product, order, and storefront management.\nBuilt with a responsive, mobile-first UI using React.js, Next.js and SCSS, ensuring performance and accessibility across devices. Integrated Stripe for secure transactions and Google Maps for accurate address handling. The platform offers real-time storefront previews, dynamic onboarding flows, and user-friendly dashboards—streamlining the entire setup process from product listing to order fulfillment.\nAlso developed a React Native mobile app for store owners, enabling easy management of orders, inventory, and notifications on the go, ensuring seamless store operations from any device."
       },
       {
